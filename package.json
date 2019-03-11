@@ -1,0 +1,16 @@
+{
+  "name": "53vp3jxon",
+  "version": "1.0.0",
+  "description": "Memory match game using vanilla JS.",
+  "main": "memoryMatch.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}
