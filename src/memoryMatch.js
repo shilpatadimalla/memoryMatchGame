@@ -19,7 +19,7 @@ function randomAnswers() {
 }
 
 function startTimer() {
-  if (started == false) {
+  if (started === false) {
     interval = setInterval(function() {
       time++;
       started = true;
@@ -57,27 +57,27 @@ function setup() {
     cell.value = answers[i];
 
     cell.addEventListener("mouseenter", function() {
-      if (this.completed == false && this.clicked == false)
+      if (this.completed === false && this.clicked === false)
         this.style.background = "orange";
     });
     cell.addEventListener("mouseleave", function() {
-      if (this.completed == false && this.clicked == false)
+      if (this.completed === false && this.clicked === false)
         this.style.background = "blue";
     });
     cell.addEventListener("click", function() {
-      if (ready == false) return;
+      if (ready === false) return;
       startTimer();
-      if (this.clicked == false && this.completed == false) {
+      if (this.clicked === false && this.completed === false) {
         clickedArray.push(this);
         reveal(this);
       }
       if (clickedArray.length == 2) {
-        if (clickedArray[0].value == clickedArray[1].value) {
+        if (clickedArray[0].value === clickedArray[1].value) {
           //if matching pair is found
           complete(clickedArray[0]);
           complete(clickedArray[1]);
           clickedArray = [];
-          if (numCompleted == 16) {
+          if (numCompleted === 16) {
             alert("You finished in " + time + " seconds!");
             clearInterval(interval);
           }
@@ -99,6 +99,6 @@ function setup() {
     });
   }
   document.getElementById("restart").addEventListener("click", function() {
-    location.reload();
+    window.location.reload();
   });
 }
